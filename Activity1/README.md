@@ -5,5 +5,5 @@
 
 ## Video Link Demonstrating Express web server functionality
 
-[YouTube Video]()
+[YouTube Video](https://youtu.be/ajSwasBaSZs)
 
