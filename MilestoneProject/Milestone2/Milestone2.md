@@ -1,6 +1,13 @@
 # CST-391 - Javascript Web Applications - Project Proposal
-- Application Name: 
+- Application Name: Vinyl Record Swap Meet
 - Author: Tyler Friesen
+
+## Instructor Feedback
+> Tyler, can you post this assignment on a git server so that you don't have to 
+> send me a zip file and instead send me a link.  If you need assistance, I can help you.  
+
+I have now uploaded my activities and this milestone solution to my GitHub. There was no other feedback
+so I have left the design as is.
 
 ## Introduction
 The milestone project being developed for this class is a vinyl record swap-meet. Users will be able to create listings on the site listing their record for trade. Other users will be able to browse and sort through the listings on the site to find records they may want to trade for.
@@ -61,3 +68,193 @@ Once a user has found a record they want to trade for they can offer up a record
 - Dependency on External Libraries or APIs
   - Risk: Relying on external libraries or APIs (e.g., for chat, authentication, or notifications) could introduce bugs, security vulnerabilities, or unexpected behaviors.
   - Mitigation: Research and choose well-documented, widely-used libraries with active community support. Test dependencies thoroughly, and stay updated on potential issues or patches.
+
+
+<hr style="border: 3px solid white; margin: 100px;">
+
+## Vinyl Record Swap Meet API Documentation
+
+This is the API documentation for the Vinyl Record Swap Meet application. The API is built following RESTful principles to ensure clean and predictable interactions. Below is a breakdown of the main endpoints and their functionalities.
+
+## 1. User API
+
+### POST /users/register
+Allows new users to create an account by providing their username, email, and password.
+
+**Request Body:**
+```
+{
+  "username": "exampleuser",
+  "email": "example@example.com",
+  "password": "password123"
+}
+```
+
+**Response:**
+- Success or failure message indicating whether the account was created.
+
+---
+
+### POST /users/login
+Allows registered users to log in to their account using their email and password.
+
+**Request Body:**
+```
+{
+  "email": "example@example.com",
+  "password": "password123"
+}
+```
+
+**Response:**
+- JSON Web Token (JWT) for authentication, or error if credentials are invalid.
+
+---
+
+### PUT /users/profile
+Authenticated users can update their profile information, such as their favorite genres and location.
+
+**Request Body:**
+```
+{
+  "location": "New York",
+  "favoriteGenres": ["rock", "jazz"]
+}
+```
+
+**Response:**
+- Updated user profile information.
+
+---
+
+### GET /users/{userId}
+Retrieves a specific user’s profile by their user ID, allowing others to see their profile, trade history, and ratings.
+
+**Response:**
+- User details, including username, location, favorite genres, and ratings.
+
+---
+
+## 2. Listing API
+
+### POST /listings
+Authenticated users can create a new listing to trade a vinyl record. The listing includes information like the artist, album title, condition, and genres.
+
+**Request Body:**
+```
+{
+  "artist": "Pink Floyd",
+  "albumTitle": "The Dark Side of the Moon",
+  "condition": "Very Good",
+  "genres": ["rock", "progressive rock"],
+  "imageUrl": "link_to_image.jpg"
+}
+```
+
+**Response:**
+- Success message and listing details.
+
+---
+
+### GET /listings
+Retrieves a list of all available vinyl record listings. The query parameters allow filtering and sorting by genres, artist, condition, and location.
+
+**Query Parameters:**
+- `genre=rock`
+- `artist=Pink Floyd`
+- `condition=good`
+- `location=New York`
+
+**Response:**
+- A list of matching listings.
+
+---
+
+### PUT /listings/{listingId}
+Allows authenticated users to edit an existing listing they created. They can update the album details, condition, genres, and images.
+
+**Request Body:**
+```
+{
+  "condition": "Excellent",
+  "genres": ["rock", "psychedelic rock"]
+}
+```
+
+**Response:**
+- Updated listing details.
+
+---
+
+### DELETE /listings/{listingId}
+Authenticated users can delete their own listings, removing them from the platform.
+
+**Response:**
+- Success message if deletion was successful.
+
+---
+
+## 3. Trade and Chat API
+
+### POST /trades/{listingId}/offer
+Users can initiate a trade by offering one of their records in exchange for a listed record.
+
+**Request Body:**
+```
+{
+  "offeredRecord": {
+    "artist": "Led Zeppelin",
+    "albumTitle": "Led Zeppelin IV",
+    "condition": "Good"
+  }
+}
+```
+
+**Response:**
+- Confirmation of the offer sent to the listing owner.
+
+---
+
+### POST /trades/{listingId}/chat
+Initiates or continues a chat between the two users discussing a trade for a specific listing.
+
+**Request Body:**
+```
+{
+  "message": "Would you be willing to trade for my Led Zeppelin IV?"
+}
+```
+
+**Response:**
+- Success message with chat history.
+
+---
+
+## 4. Rating API
+
+### POST /ratings/{userId}
+After a trade is completed, users can leave a rating for each other, assessing their experience with the trade.
+
+**Request Body:**
+```
+{
+  "rating": 5,
+  "review": "Great trade! The record was in perfect condition."
+}
+```
+
+**Response:**
+- Success message and updated user rating.
+
+---
+
+### GET /ratings/{userId}
+Retrieves all ratings and reviews for a specific user, allowing others to assess their trade history.
+
+**Response:**
+- List of ratings and reviews.
+
+---
+
+This RESTful API provides the foundational structure for handling all key interactions in the Vinyl Record Swap Meet application, focusing on scalability, flexibility, and maintainability.
+
