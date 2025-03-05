@@ -7,7 +7,7 @@
 ---
 
 <figure>
-    <img src="./artistlist.png.png" alt="image1">
+    <img src="./artistlist.png" alt="image1">
     <figcaption>The list of artists to choose from</figcaption>
 </figure>
 
