@@ -15,7 +15,7 @@ export const addListing = async (listing: Listing) => {
 };
 
 export const readListings = async (query: any) => {
-	const result = await execute<Listing[]>(listingsQueries.readListings, [
+	const result = await execute<any[]>(listingsQueries.readListings, [
 		query.artist || null,
 		query.artist || null,
 		query.condition || null,

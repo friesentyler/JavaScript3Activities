@@ -36,13 +36,13 @@ export const getUserProfile: RequestHandler = async (req: Request, res: Response
 		if (Number.isNaN(userId)) {
 			const users = await UsersDAO.getAllUsers();
 			res.status(200).json(users);
+		} else {
+			const users = await UsersDAO.getUserProfile(userId);
+			if (users.length === 0) {
+				res.status(404).json({ message: 'User not found' });
+			}
+			res.status(200).json(users[0]);
 		}
-		const users = await UsersDAO.getUserProfile(userId);
-		if (users.length === 0) {
-			res.status(404).json({ message: 'User not found' });
-		}
-
-		res.status(200).json(users[0]);
 	} catch (error) {
 		console.error('[users.controller][getUserProfile][Error] ', error);
 		res.status(500).json({ message: 'There was an error fetching the user profile' });

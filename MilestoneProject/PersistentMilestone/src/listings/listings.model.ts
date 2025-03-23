@@ -6,4 +6,3 @@ export interface Listing {
 	condition: string;
 	imageUrl: string;
 }
-

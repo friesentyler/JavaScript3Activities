@@ -1,0 +1,21 @@
+<div *ngIf="ratings">
+  <h2>Ratings List</h2>
+  <ul>
+    <li *ngFor="let rating of ratings" (click)="onSelectRating(rating)">
+      Rating ID: {{ rating.ratingId }} - Rating: {{ rating.rating }}
+    </li>
+  </ul>
+
+  <div *ngIf="selectedRating">
+    <h3>Selected Rating Details</h3>
+    <p>Rating ID: {{ selectedRating.ratingId }}</p>
+    <p>Ratee ID: {{ selectedRating.rateeId }}</p>
+    <p>Rater ID: {{ selectedRating.raterId }}</p>
+    <p>Rating: {{ selectedRating.rating }}</p>
+    <p>Rating Text: {{ selectedRating.ratingText }}</p>
+  </div>
+</div>
+
+<div *ngIf="!ratings">
+  <p>No ratings available</p>
+</div>

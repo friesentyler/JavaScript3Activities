@@ -16,7 +16,19 @@ export const createListing = async (req: Request, res: Response) => {
 export const getListings = async (req: Request, res: Response) => {
 	try {
 		const listings = await ListingsDAO.readListings(req.query);
-		res.status(200).json(listings);
+		const newListings: Listing[] = [];
+		for (let i = 0; i < listings.length; i++) {
+			let record = {
+				artist: listings[i].artist,
+				albumTitle: listings[i].title,
+				listerId: listings[i].lister_id,
+				condition: listings[i].record_condition,
+				imageUrl: listings[i].image_location,
+				listingId: listings[i].order_id
+			};
+			newListings.push(record);
+		}
+		res.status(200).json(newListings);
 	} catch (error) {
 		console.error('[listings.controller][getListings][Error] ', error);
 		res.status(500).json({ message: 'Error retrieving listings' });
