@@ -4,42 +4,48 @@
 
 # Part 1
 
+## Introduction
+In this assignment, I integrated the front-end Angular Music application with the back-end Express MusicAPI, created in a previous topic. The integration replaces hard-coded data with live data fetched from the API using Angular's HttpClient module. The focus was on modifying the music service (music-service.service.ts) to connect with the back-end API, retrieve data asynchronously using Observables, and ensure the user interface dynamically reflects this live data. This process also required refactoring existing components to handle the new data flow and adapting the application's behavior to work with a real-time API.
+
 ---
 
 <figure>
     <img src="./artistlist.png" alt="image1">
-    <figcaption>The list of artists to choose from</figcaption>
+    <figcaption>This is the angular view that shows the list of artists we can click on. It retrieves the list of artists from the database and uses it to populate the page.</figcaption>
 </figure>
 
 ---
 
 <figure>
     <img src="./createalbum.png" alt="image2">
-    <figcaption>create an album page/form</figcaption>
+    <figcaption>This is the angular view that allows the creation of an album, the user can enter all the relevant info from an album. It then makes an SQL query to add the record to the DB.</figcaption>
 </figure>
 
 ---
 
 <figure>
     <img src="./homepage.png" alt="image3">
-    <figcaption>The home page for the application</figcaption>
+    <figcaption>The default home page for the angular application.</figcaption>
 </figure>
 
 ---
 
 <figure>
     <img src="./listalbums.png" alt="image3">
-    <figcaption>The home page for the application</figcaption>
+    <figcaption>This view is inside the artist list view. When clicking on a specific album from an artist this page will populate and retrieve the album data from the database.</figcaption>
 </figure>
 
 ---
 
 <figure>
     <img src="./listtracks.png" alt="image3">
-    <figcaption>The home page for the application</figcaption>
+    <figcaption>This view is inside the album list view. When clicking on a specific track for an album this page will populate and retrieve the specific tracks from the database. Technically it doesn't open a new page, it just adds the html elements to the existing page.</figcaption>
 </figure>
 
 ---
+
+## Conclusion
+By completing this assignment, I successfully integrated the Music application's front end with the back-end API, enabling the display and manipulation of live data for artists and albums. The refactoring involved the use of Angular's HttpClient module to replace hard-coded values with data retrieved via asynchronous API calls, allowing for more dynamic and realistic application behavior. This experience deepened my understanding of Angular's Observables, asynchronous programming, and the importance of streamlining client-server communication. With the application now fully functional and integrated, it provides a more robust user experience.
 
 
 ## Research
