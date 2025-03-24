@@ -291,3 +291,9 @@ of complexity. Within the entirety of the API there are "sub" APIs that had to b
 - Currently there are no blatantly obvious bugs, however there are edge cases that exist still that can cause the whole API to crash. In order to be production
 ready there would need to be much more error checking happening.
 - As for lessons to be learned to apply to new projects I wish I would have started with the Postman documentation as it would have been easier.
+
+# Youtube Videos
+
+## Milestone 4
+https://youtu.be/oZpdpvVeMkw
+
