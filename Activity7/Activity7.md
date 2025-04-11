@@ -20,10 +20,10 @@
 # Part 3
 
 ### Adding a new album form
-![image4](./newalbumform)
+![image4](./newalbumform.png)
 
 ### the home page after adding the new album (you can see it here)
-![image5](./homepageafternew)
+![image5](./homepageafternew.png)
 
 ## Summary
 In this section of the application, we focus on implementing a dynamic form component that enables users to input data directly into the interface. This form is designed to be interactive and responsive, meaning it can adapt to various types of user input in real time. As users fill out the fields within the form, we capture their input and store it in state variables using React’s state management system, typically through the useState hook or similar mechanisms. These state variables serve as a temporary holding space for the form data, allowing us to manage and manipulate the input as needed throughout the component lifecycle.
