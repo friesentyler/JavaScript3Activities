@@ -292,8 +292,14 @@ of complexity. Within the entirety of the API there are "sub" APIs that had to b
 ready there would need to be much more error checking happening.
 - As for lessons to be learned to apply to new projects I wish I would have started with the Postman documentation as it would have been easier.
 
+### I have not created a powerpoint for this project yet, I am leaving that for the final assignment where it asks to create the powerpoint,
+### in the meantime all of the necessary info for the project has been documented here.
+
 # Youtube Videos
 
 ## Milestone 4
 https://youtu.be/oZpdpvVeMkw
+
+## Milestone 5
+
 
