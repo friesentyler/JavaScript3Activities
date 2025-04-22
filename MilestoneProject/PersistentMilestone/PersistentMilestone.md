@@ -305,3 +305,4 @@ https://youtu.be/ISB0ZRtwi8g
 
 ## Milestone 6
 https://youtu.be/uF3rj3ER7Yk
+(powerpoint file is attached in the same directory for /PersistentMilestone if you want to download and view manually)
