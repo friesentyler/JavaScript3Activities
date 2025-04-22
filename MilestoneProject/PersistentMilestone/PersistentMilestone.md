@@ -303,3 +303,5 @@ https://youtu.be/oZpdpvVeMkw
 ## Milestone 5
 https://youtu.be/ISB0ZRtwi8g
 
+## Milestone 6
+https://youtu.be/uF3rj3ER7Yk
